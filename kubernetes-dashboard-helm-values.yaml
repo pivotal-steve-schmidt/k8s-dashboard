@@ -1,0 +1,15 @@
+global:
+  imageRegistry: docker.io
+  imagePullSecrets:
+    - tdh-docker-repo
+
+image:
+  repository: kubernetesui/dashboard
+  pullPolicy: IfNotPresent
+  pullSecrets:
+   - tdh-docker-repo
+
+service:
+  type: ClusterIP
+  externalPort: 443
+
